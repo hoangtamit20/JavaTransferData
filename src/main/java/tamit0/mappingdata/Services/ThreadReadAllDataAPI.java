@@ -1,6 +1,7 @@
 package tamit0.mappingdata.Services;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.PreparedStatement;
@@ -34,10 +35,8 @@ public class ThreadReadAllDataAPI extends Thread {
 
     public static JsonArray getDataFromApi(String url) {
         CloseableHttpClient httpClient = HttpClients.createDefault();
-
         // Create a new HttpGet object for the API URL.
         HttpGet httpGet = new HttpGet(url);
-
         try (// Execute the request and get the response.
                 CloseableHttpResponse response = httpClient.execute(httpGet)) {
             // Check if the response is successful.
@@ -46,11 +45,9 @@ public class ThreadReadAllDataAPI extends Thread {
                 BufferedReader bufferedReader = new BufferedReader(
                         new InputStreamReader(response.getEntity().getContent()));
                 String responseBody = bufferedReader.readLine();
-
                 // Convert the response body to a JsonArray.
                 Gson gson = new Gson();
                 JsonArray jsonArray = gson.fromJson(responseBody, JsonArray.class);
-
                 return jsonArray;
             }
         } catch (UnsupportedOperationException | IOException e) {
@@ -145,7 +142,8 @@ public class ThreadReadAllDataAPI extends Thread {
             var hopDongModel = new HopDongModel();
             var baoHiemModel = new BaoHiemModel();
             var sql = getStrSql(getTableNameOfJsonObject(j), j);
-            try (PreparedStatement preparedStatement = ConnectionService.getConnection("mysql").prepareStatement(sql)) {
+            try (PreparedStatement preparedStatement = ConnectionService
+                    .getConnection("mysql").prepareStatement(sql)) {
                 try {
                     nhanVienModel = new Gson().fromJson(j.toString(), NhanVienModel.class);
                     if (nhanVienModel != null && nhanVienModel.getIdNhanVien() > ID_IS_NULL
@@ -175,7 +173,11 @@ public class ThreadReadAllDataAPI extends Thread {
                         continue;
                     }
                 } catch (Exception ex) {
-                    HopDongRule.isValidCatchJsonObject(j);
+                    var hd = HopDongRule.jsonObjectToHopDongModel(j);
+                    if (hd != null)
+                        if (HopDongModel.insertHopDong(hd, preparedStatement) > 0)
+                            hopDongModels.add(hd);
+                    continue;
                 }
 
                 try {
@@ -236,6 +238,6 @@ public class ThreadReadAllDataAPI extends Thread {
         System.out.println("\u001B[36m" + "Total : " + lengOfJsonArray + "\u001B[0m");
         System.out.println("\u001B[32m" + "Success : " + sizeOfAllList + "\u001B[0m");
         System.out.println("\u001B[31m" + "Failed : " + (lengOfJsonArray - sizeOfAllList) + "\u001B[0m");
-        System.out.println("\u001b[38;5;11m"+"Log Path : "+ "E:\\JavaCS445\\mappingdata\\log.txt" +"\u001b[0m");
+        System.out.println("\u001b[38;5;11m" + "Log Path : " + new File("").getAbsolutePath() + "\\log.txt" + "\u001b[0m");
     }
 }

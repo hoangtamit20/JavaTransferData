@@ -88,7 +88,7 @@ public class BaoHiemModel {
             preparedStatement.setInt(6, baoHiemModel.getIdNhanVien());
             return preparedStatement.executeUpdate();
         } catch (Exception ex) {
-            WriteLogService.logException(new Exception(BaseRule.dateTimeNow + " : " + BaoHiemRule.class.getSimpleName() + " - " + baoHiemModel.getIdBaoHiem() + "Lỗi : " + ex.getMessage()));
+            WriteLogService.logException(new Exception(BaseRule.dateTimeNow + " : " + BaoHiemRule.class.getSimpleName() + " - " + baoHiemModel.getIdBaoHiem() + " - Lỗi : " + ex.getMessage()));
             System.out.println(ex.getMessage());
             return 0;
         }

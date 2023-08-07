@@ -43,7 +43,7 @@ public class PhongBanModel {
             preparedStatement.setString(2, phongBanModel.getTenPhongBan());
             return preparedStatement.executeUpdate();
         } catch (Exception ex) {
-            WriteLogService.logException(new Exception(BaseRule.dateTimeNow + " : " + PhongBanRule.class.getSimpleName() + " - " + phongBanModel.getIdPhongBan() + "Lỗi : " + ex.getMessage()));
+            WriteLogService.logException(new Exception(BaseRule.dateTimeNow + " : " + PhongBanRule.class.getSimpleName() + " - " + phongBanModel.getIdPhongBan() + " - Lỗi : " + ex.getMessage()));
             System.out.println(ex.getMessage());
             return 0;
         }

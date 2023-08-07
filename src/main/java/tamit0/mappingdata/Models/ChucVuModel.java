@@ -43,7 +43,7 @@ public class ChucVuModel {
             preparedStatement.setString(2, chucVuModel.getTenChucVu());
             return preparedStatement.executeUpdate();
         } catch (Exception ex) {
-            WriteLogService.logException(new Exception(BaseRule.dateTimeNow + " : " + ChucVuRule.class.getSimpleName() + " - " + chucVuModel.getIdChucVu() + "Lỗi : " + ex.getMessage()));
+            WriteLogService.logException(new Exception(BaseRule.dateTimeNow + " : " + ChucVuRule.class.getSimpleName() + " - " + chucVuModel.getIdChucVu() + " - Lỗi : " + ex.getMessage()));
             System.out.println(ex.getMessage());
             return 0;
         }
