@@ -1,0 +1,144 @@
+[
+    {
+        "map": {
+            "idChucVu": 1,
+            "tenChucVu": "Giám ??c"
+        }
+    },
+    {
+        "map": {
+            "idChucVu": 2,
+            "tenChucVu": "Tr??ng phòng"
+        }
+    },
+    {
+        "map": {
+            "idChucVu": 3,
+            "tenChucVu": "T?p v?"
+        }
+    },
+    {
+        "map": {
+            "idChucVu": 1,
+            "tenChucVu": "Giám ??c"
+        }
+    },
+    {
+        "map": {
+            "idChucVu": 2,
+            "tenChucVu": "Tr??ng phòng"
+        }
+    },
+    {
+        "map": {
+            "idChucVu": 3,
+            "tenChucVu": "T?p v?"
+        }
+    },
+    {
+        "map": {
+            "idPhongBan": 1,
+            "tenPhongBan": "Kinh doanh1"
+        }
+    },
+    {
+        "map": {
+            "idPhongBan": 2,
+            "tenPhongBan": ""
+        }
+    },
+    {
+        "map": {
+            "idPhongBan": 3
+        }
+    },
+    {
+        "map": {
+            "idPhongBan": 4,
+            "tenPhongBan": "09709876"
+        }
+    },
+    {
+        "map": {
+            "idPhongBan": 5,
+            "tenPhongBan": "sh#$!@"
+        }
+    },
+    {
+        "map": {
+            "idPhongBan": 1002,
+            "tenPhongBan": "Phòng Marketing"
+        }
+    },
+    {
+        "map": {
+            "idChucVu": 1,
+            "tenChucVu": "Giám ??c"
+        }
+    },
+    {
+        "map": {
+            "idChucVu": 2,
+            "tenChucVu": "Tr??ng phòng"
+        }
+    },
+    {
+        "map": {
+            "idChucVu": 3,
+            "tenChucVu": "T?p v?"
+        }
+    },
+    {
+        "map": {
+            "idChucVu": 1,
+            "tenChucVu": "Giám ??c"
+        }
+    },
+    {
+        "map": {
+            "idChucVu": 2,
+            "tenChucVu": "Tr??ng phòng"
+        }
+    },
+    {
+        "map": {
+            "idChucVu": 3,
+            "tenChucVu": "T?p v?"
+        }
+    },
+    {
+        "map": {
+            "idPhongBan": 1,
+            "tenPhongBan": "Kinh doanh1"
+        }
+    },
+    {
+        "map": {
+            "idPhongBan": 2,
+            "tenPhongBan": ""
+        }
+    },
+    {
+        "map": {
+            "idPhongBan": 3
+        }
+    },
+    {
+        "map": {
+            "idPhongBan": 4,
+            "tenPhongBan": "09709876"
+        }
+    },
+    {
+        "map": {
+            "idPhongBan": 5,
+            "tenPhongBan": "sh#$!@"
+        }
+    },
+    {
+        "map": {
+            "idPhongBan": 1002,
+            "tenPhongBan": "Phòng Marketing"
+        }
+    }
+]

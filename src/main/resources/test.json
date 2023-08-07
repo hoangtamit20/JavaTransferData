@@ -1,0 +1,140 @@
+{
+    "sqlServer": {
+        "url": "jdbc:sqlserver://HoangTam\\TAMHOANG;encrypt=true;trustServerCertificate=true;databaseName=NhanVienDB",
+        "username": "sa",
+        "password": "123456"
+    },
+    "mysql": {
+        "url": "jdbc:mysql://localhost:3306/NhanVienDB",
+        "username": "root",
+        "password": "123456"
+    },
+    "tables": {
+        "ChucVu": {
+            "sqlServerTable": "ChucVu",
+            "mySqlTable": "ChucVu",
+            "model": "ChucVuModel",
+            "rule": "ChucVuModel",
+            "fields": {
+                "ChucVuFields": {
+                    "sqlServerFields": {
+                        "id": "idChucVu",
+                        "name": "tenChucVu"
+                    },
+                    "mySqlFields": {
+                        "id": "idChucVu",
+                        "name": "tenChucVu"
+                    }
+                }
+            }
+        },
+        "PhongBan": {
+            "sqlServerTable": "PhongBan",
+            "mySqlTable": "PhongBan",
+            "model": "PhongBanModel",
+            "rule": "PhongBanRule",
+            "fields": {
+                "PhongBanFields": {
+                    "sqlServerFields": {
+                        "id": "idPhongBan",
+                        "name": "tenPhongBan"
+                    },
+                    "mySqlFields": {
+                        "id": "idPhongBan",
+                        "name": "tenPhongBan"
+                    }
+                }
+            }
+        },
+        "NhanVien": {
+            "sqlServerTable": "NhanVien",
+            "mySqlTable": "NhanVien",
+            "model": "NhanVienModel",
+            "rule": "NhanVienRule",
+            "fields": {
+                "NhanVienFields": {
+                    "sqlServerFields": {
+                        "id": "idNhanVien",
+                        "hoTen": "hoTen",
+                        "gioiTinh": "gioiTinh",
+                        "dienThoai": "dienThoai",
+                        "CCCD": "CCCD",
+                        "hinhAnh": "hinhAnh",
+                        "trinhDoHocVan": "trinhDoHocVan",
+                        "idChucVu": "idChucVu",
+                        "idPhongBan": "idPhongBan"
+                    },
+                    "mySqlFields": {
+                        "id": "idNhanVien",
+                        "hoTen": "hoTen",
+                        "gioiTinh": "gioiTinh",
+                        "dienThoai": "dienThoai",
+                        "CCCD": "CCCD",
+                        "hinhAnh": "hinhAnh",
+                        "trinhDoHocVan": "trinhDoHocVan",
+                        "idChucVu": "idChucVu",
+                        "idPhongBan": "idPhongBan"
+                    }
+                }
+            }
+        },
+        "BaoHiem": {
+            "sqlServerTable": "BaoHiem",
+            "mySqlTable": "BaoHiem",
+            "model": "BaoHiemModel",
+            "rule": "BaoHiemRule",
+            "fields": {
+                "BaoHiemFields": {
+                    "sqlServerFields": {
+                        "id": "idBaoHiem",
+                        "soBaoHiem": "soBaoHiem",
+                        "ngayCap": "ngayCap",
+                        "noiCap": "noiCap",
+                        "noiKhamBenh": "noiKhamBenh",
+                        "idNhanVien": "idNhanVien"
+                    },
+                    "mySqlFields": {
+                        "id": "idBaoHiem",
+                        "soBaoHiem": "soBaoHiem",
+                        "ngayCap": "ngayCap",
+                        "noiCap": "noiCap",
+                        "noiKhamBenh": "noiKhamBenh",
+                        "idNhanVien": "idNhanVien"
+                    }
+                }
+            }
+        },
+        "HopDong": {
+            "sqlServerTable": "HopDong",
+            "mySqlTable": "HopDong",
+            "model": "HopDongModel",
+            "rule": "HopDongRule",
+            "fields": {
+                "HopDongFields": {
+                    "sqlServerFields": {
+                        "id": "idHopDong",
+                        "ngayBatDau": "ngayBatDau",
+                        "ngayKetThuc": "ngayKetThuc",
+                        "ngayKy": "ngayKy",
+                        "noiDung": "noiDung",
+                        "lanKy": "lanKy",
+                        "thoiHan": "thoiHan",
+                        "heSoLuong": "heSoLuong",
+                        "idNhanVien": "idNhanVien"
+                    },
+                    "mySqlFields": {
+                        "id": "idHopDong",
+                        "ngayBatDau": "ngayBatDau",
+                        "ngayKetThuc": "ngayKetThuc",
+                        "ngayKy": "ngayKy",
+                        "noiDung": "noiDung",
+                        "lanKy": "lanKy",
+                        "thoiHan": "thoiHan",
+                        "heSoLuong": "heSoLuong",
+                        "idNhanVien": "idNhanVien"
+                    }
+                }
+            }
+        }
+    }
+}
