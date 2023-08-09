@@ -84,37 +84,7 @@ public class BaoHiemRule {
 
     public static boolean isValidCatchJsonObject(JsonObject jsonObject, List<BaoHiemModel> listBaoHiem)
     {
-        // List<Object> listBH = new ArrayList<>();
-        // for(var bh : listBaoHiem)
-        //     listBH.add(bh.getSoBaoHiem());
-        // List<String> listKeyGetValue = new ArrayList<>();
-        // for(var key : jsonObject.keySet())
-        //     listKeyGetValue.add(key);
-        // int idBaoHiem = jsonObject.get(listKeyGetValue.get(0)).getAsInt();
-        // String soBaoHiem = jsonObject.get(listKeyGetValue.get(1)).getAsString();
-        // String ngayCap = jsonObject.get(listKeyGetValue.get(2)).getAsString();
-        // String noiCap = jsonObject.get(listKeyGetValue.get(3)).getAsString();
-        // String noiKhamBenh = jsonObject.get(listKeyGetValue.get(4)).getAsString();
-        // int idNhanVien = jsonObject.get(listKeyGetValue.get(5)).getAsInt();
-
-        // try{
-        //     boolean checkSoBaoHiem = validateSoBaoHiem(soBaoHiem, idBaoHiem, listBH);
-        //     boolean checkNgayCap = validateNgayCap(ngayCap, idBaoHiem);
-        //     boolean checkNoiCap = validateNoiCap(noiCap, idBaoHiem);
-        //     boolean checkNoiKhamBenh = validateNoiKhamBenh(noiKhamBenh, idBaoHiem);
-        //     boolean checkIdNhanVien = BaseRule.validIdForeignKey(idNhanVien, idBaoHiem, BaoHiemRule.class.getSimpleName(), "idNhanVien");
-        //     boolean check =  checkIdNhanVien && checkNgayCap && checkNoiKhamBenh && checkSoBaoHiem && checkNoiCap;
-        //     if (check)
-        //     {
-        //         BaoHiemModel baoHiemModel = new BaoHiemModel(idBaoHiem, soBaoHiem, BaseRule.stringToDate(ngayCap), noiCap, noiKhamBenh, idNhanVien);
-        //     }
-
-        // }catch(Exception ex)
-        // {
-        //     return false;
-        // }
         return jsonObjectToBaoHiemModel(jsonObject, listBaoHiem) != null;
-        
     }
 
     public static BaoHiemModel jsonObjectToBaoHiemModel(JsonObject jsonObject, List<BaoHiemModel> listBaoHiem)

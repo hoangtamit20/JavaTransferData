@@ -120,7 +120,7 @@ public class NhanVienModel {
             preparedStatement.setInt(9, nhanVienModel.getIdPhongBan());
             return preparedStatement.executeUpdate();
         } catch (Exception ex) {
-            WriteLogService.logException(new Exception(BaseRule.dateTimeNow + " : " + NhanVienRule.class.getSimpleName() + " - " + nhanVienModel.getIdNhanVien() + "Lỗi : " + ex.getMessage()));
+            WriteLogService.logException(new Exception(BaseRule.dateTimeNow + " : " + NhanVienRule.class.getSimpleName() + " - " + nhanVienModel.getIdNhanVien() + " - Lỗi : " + ex.getMessage()));
             System.out.println(ex.getMessage());
             return 0;
         }

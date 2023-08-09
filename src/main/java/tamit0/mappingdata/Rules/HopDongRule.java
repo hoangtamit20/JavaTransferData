@@ -1,8 +1,4 @@
 package tamit0.mappingdata.Rules;
-
-import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +6,6 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import tamit0.mappingdata.Models.HopDongModel;
-import tamit0.mappingdata.Services.WriteLogService;
 
 public class HopDongRule {
 
@@ -91,11 +86,16 @@ public class HopDongRule {
     }
 
     public static boolean isValidCatchJsonObject(JsonObject jsonObject) {
-        List<String> listKeyGetValue = new ArrayList<>();
-        for (var key : jsonObject.keySet())
-            listKeyGetValue.add(key);
-        try {
+        return jsonObjectToHopDongModel(jsonObject) != null;
+    }
 
+    public static HopDongModel jsonObjectToHopDongModel(JsonObject jsonObject)
+    {
+        List<String> listKeyGetValue = new ArrayList<>();
+        for(var key : jsonObject.keySet()){
+            listKeyGetValue.add(key);
+        }
+        try{
             int idHopDong = jsonObject.get(listKeyGetValue.get(0)).getAsInt();
             String ngayBatDau = jsonObject.get(listKeyGetValue.get(1)).getAsString();
             String ngayKetThuc = jsonObject.get(listKeyGetValue.get(2)).getAsString();
@@ -105,7 +105,6 @@ public class HopDongRule {
             String thoiHan = jsonObject.get(listKeyGetValue.get(6)).getAsString();
             String heSoLuong = jsonObject.get(listKeyGetValue.get(7)).getAsString();
             int idNhanVien = jsonObject.get(listKeyGetValue.get(8)).getAsInt();
-
             boolean checkNgayBatDau = validateNgayBatDau(ngayBatDau, idHopDong);
             boolean checkNgayKetThuc = validateNgayKetThuc(ngayKetThuc, idHopDong);
             boolean checkNgayKy = validateNgayKy(ngayKy, idHopDong);
@@ -114,12 +113,19 @@ public class HopDongRule {
             boolean checkThoiHan = validateThoiHan(thoiHan, idHopDong);
             boolean checkHeSoLuong = validateHeSoLuong(heSoLuong, idHopDong);
             boolean checkIdNhanVien = BaseRule.validIdForeignKey(idNhanVien,
-                    idHopDong, BaoHiemRule.class.getSimpleName(), "idNhanVien");
-            return checkNgayBatDau && checkNgayKetThuc && checkNgayKy && checkNoiDung && checkLanKy && checkThoiHan
+                    idHopDong, HopDongRule.class.getSimpleName(), "idNhanVien");
+            boolean check = checkNgayBatDau && checkNgayKetThuc && checkNgayKy && checkNoiDung && checkLanKy && checkThoiHan
                     && checkHeSoLuong && checkIdNhanVien;
-        } catch (Exception ex) {
-            return false;
+            if (check)
+            {
+                return new HopDongModel(idHopDong, BaseRule.stringToDate(ngayBatDau), BaseRule.stringToDate(ngayKetThuc), 
+                                    BaseRule.stringToDate(ngayKy), noiDung, idNhanVien, idNhanVien, idHopDong, idNhanVien);
+            }
+            return null;
+
+        }catch(Exception ex)
+        {
+            return null;
         }
     }
-
 }
