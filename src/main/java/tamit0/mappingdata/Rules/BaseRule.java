@@ -65,7 +65,6 @@ public class BaseRule {
                     dateTimeNow + " : " + ruleName + " - validateDate - "
                             + idObject + " - " + variableName + " : định dạng không hợp lệ."));
             return false;
-
         }
         return true;
     }
@@ -91,7 +90,7 @@ public class BaseRule {
         if (strCCCD.length() != DO_DAI_CMND && strCCCD.length() != DO_DAI_CCCD) {
             count++;
             WriteLogService.logException(new Exception(dateTimeNow + " : " + ruleName + " - validateCCCD - "
-                    + idObject + " - " + variableName + " : độ dài không hợp lệ.(9 hoặc 13 số)!"));
+                    + idObject + " - " + variableName + " : độ dài không hợp lệ.(" + DO_DAI_CMND + "hoặc "+ DO_DAI_CCCD +" số)!"));
         }
         if (listCCCD.contains(strCCCD)) {
             WriteLogService.logException(new Exception(dateTimeNow + " : " + ruleName + " - validateCCCD - "
@@ -168,9 +167,7 @@ public class BaseRule {
                     return dateFormat;
                 }
 
-            } catch (ParseException e) {
-                // System.out.println("Invalid date format");
-                
+            } catch (ParseException e) {                
             }
         }
         return null;
